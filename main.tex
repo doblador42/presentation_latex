@@ -1,0 +1,172 @@
+\documentclass[aspectratio=169]{beamer}
+\usepackage{fontspec}
+\protrudechars=2 % or \pdfprotrudechars=2 and
+\adjustspacing=2 %    \pdfadjustspacing=2 with luatex < v0.85
+\usepackage{amsmath}
+\usepackage{graphicx}
+\usepackage[table]{xcolor} % Για χρωματισμούς στις γραμμές και τις στήλες
+\usepackage{xcolor}
+\usepackage{polyglossia}
+\usepackage{csquotes}
+\setmainlanguage{greek}
+\setotherlanguage{english}
+\setmainfont[Numbers={OldStyle, Proportional},
+Ligatures=TeX
+]{Linux Libertine O}
+\newfontfamily\greekfont{Linux Libertine O}
+\newfontfamily\englishfont{Linux Libertine O}
+\newfontfamily\greekfontsf{Linux Libertine O}
+
+\usetheme{Madrid}
+\usecolortheme{beaver}
+\title{Υβριδική Κάλυψη Εκδηλώσεων}
+\subtitle{Εισαγωγικές πληροφορίες}
+\author{Ερμής Δούλος\\ \textit{dit17046@uop.gr}}
+\date{\today}
+
+\begin{document}
+
+\frame{\titlepage}
+\section{Εισαγωγή}
+\begin{frame}{Τι Είναι Η Υβριδική Κάλυψη\footnote{Ο τομέας γνώρισε άνοδο κατά τον covid-19};}
+  \begin{itemize}
+  \item \textbf{Ορισμός:} Συνδυασμός φυσικής παρουσίας και διαδικτυακής συμμετοχής.
+  \item \textbf{Γιατί είναι σημαντική:}
+    \begin{itemize}
+    \item Επέκταση ακροατηρίου.
+    \item Πρόσβαση για όσους δεν μπορούν να παρευρεθούν εκείνη τη στιγμή.
+    \end{itemize}
+  \item \textbf{Παραδείγματα χρήσης:} Συνέδρια, γάμοι, μαθήματα, συναντήσεις.
+  \end{itemize}
+\end{frame}
+
+\section{Εξοπλισμός}
+\begin{frame}{Εξοπλισμός που Χρειαζόμαστε}
+  \textbf{Ήχος:}
+  \begin{itemize}
+  \item Κονσόλες ήχου (π.χ., Behringer X32).
+  \item Καλώδια XLR:
+    \begin{itemize}
+    \item Υψηλής ποιότητας μετάδοση.
+    \item Προστασία από παρεμβολές (balanced signal).
+    \end{itemize}
+  \item Γιατί όχι 3.5mm jack;
+    \begin{itemize}
+    \item Ευαίσθητα σε παρεμβολές.
+    \item Μειωμένη ποιότητα ήχου.
+    \end{itemize}
+  \end{itemize}
+\end{frame}
+
+
+\begin{frame}{XLR vs 3.5mm audio jack}
+
+  \begin{table}[]
+\centering
+\resizebox{\textwidth}{!}{%
+\begin{tabular}{|>{\columncolor[gray]{0.9}}l|l|l|}
+\hline
+\rowcolor[HTML]{C0C0C0}
+\textbf{Χαρακτηριστικό}       & \textbf{XLR}                                                                 & \textbf{3.5mm Jack}                                                        \\ \hline
+\textbf{Ποιότητα Ήχου}       & Ισορροπημένο σήμα: Μειώνει θόρυβο και παρεμβολές                              & Μη ισορροπημένο σήμα: Επιρρεπές σε θόρυβο.                                 \\ \hline
+\rowcolor[gray]{0.95}
+\textbf{Απόσταση Μετάδοσης}  & Μεγάλη απόσταση χωρίς υποβάθμιση (δεκάδες μέτρα).                             & Μικρή απόσταση, υποβαθμίζεται γρήγορα.                                     \\ \hline
+\textbf{Αντοχή και Σχεδιασμός} & Στιβαροί μεταλλικοί σύνδεσμοι, ασφαλίζουν στη θύρα.                          & Ευαίσθητοι σύνδεσμοι, αποσυνδέονται εύκολα.                                \\ \hline
+\rowcolor[gray]{0.95}
+\textbf{Περιβάλλον Χρήσης}    & Επαγγελματικά στούντιο, συναυλίες, ζωντανές μεταδόσεις.                      & Καταναλωτικά προϊόντα, απλό ήχο σε PC/κινητά.                              \\ \hline
+\textbf{Κόστος}              & Πιο ακριβό, κατάλληλο για επαγγελματικές απαιτήσεις.                          & Φθηνό, αλλά λιγότερο αξιόπιστο.                                           \\ \hline
+\end{tabular}%
+}
+\caption{Σύγκριση XLR και 3.5mm Jack}
+\label{table:xlr_vs_jack}
+\end{table}
+
+  \begin{figure}
+    \centering
+    \includegraphics[width=0.25\textwidth]{images/xlr.png}
+    \caption{Καλώδιο ήχου XLR δίπλα σε τυπικό 3.5 χιλιοστών καλώδιο ήχου}
+  \end{figure}
+\end{frame}
+
+\begin{frame}{Βίντεο:}
+  \begin{itemize}
+  \item HDMI Capture Card (π.χ., Elgato Camlink, Blackmagic\footnote{γνωστή για το πρόγραμμα επεξεργασίας Video Davinci Resolve} Atem mini).
+  \item Κάμερες και μικρόφωνα (τουλάχιστον 1080p ανάλυση).
+  \end{itemize}
+      \begin{figure}
+    \centering
+    \includegraphics[width=0.1\textwidth]{images/elgato.jpeg}
+    \includegraphics[width=0.25\textwidth]{images/atem.jpg}
+    \caption{Elgato Camlink Capture card και κονσόλα καταγραφής audio/video Atem mini}
+    \end{figure}
+\end{frame}
+
+\begin{frame}{Ρυθμίσεις Εξοπλισμού}
+  \begin{itemize}
+  \item \textbf{Σύνδεση εξόδου ακουστικών της κονσόλας:}
+    \begin{itemize}
+    \item Χρήσιμη για παρακολούθηση ήχου.
+    \item Ιδανική για τεχνικό έλεγχο.
+    \item Χρήση της εξόδου της κονσόλας ως είσοδο μικροφώνου του υπολογιστή
+      \begin{itemize}
+      \item Έτσι ακούγεται η \enquote{αίθουσα} διαδικτυακά
+      \item Αποφεύγουμε τον μικροφωνισμό\footnote{Θέλει πάντα προσεκτική σχεδίαση του συστήματός μας για να τον αποφύγουμε}
+      \end{itemize}
+    \end{itemize}
+  \item \textbf{Κατάλληλος υπολογιστής:}
+    \begin{itemize}
+    \item CPU: i5 ή ανώτερο.
+    \item GPU: NVIDIA GTX 1660 ή νεότερη.
+    \item RAM: 16GB+ \footnote{Σε Linux αρκούν και 8GB}.
+    \end{itemize}
+  \item Ο κακός υπολογιστής είναι σαν να τρέχεις μαραθώνιο με σαγιονάρες. Απλά δεν γίνεται
+  \end{itemize}
+\end{frame}
+
+\section{Λογισμικό}
+\begin{frame}{Λογισμικό για Υβριδική Κάλυψη}
+  \textbf{OBS (Open Broadcaster Software):}
+  είναι ένα δωρεάν και ανοιχτού κώδικα λογισμικό που χρησιμοποιείται για
+  εγγραφή και ζωντανή μετάδοση βίντεο και ήχου
+  \begin{itemize}
+  \item \textbf{Τι κάνει:}
+    \begin{itemize}
+    \item Εγγραφή και μετάδοση σε πραγματικό χρόνο.
+    \item Ενσωμάτωση πηγών ήχου/βίντεο.
+    \end{itemize}
+  \item \textbf{Βασικές λειτουργίες:}
+    \begin{itemize}
+    \item Ρυθμίσεις απλών ή σύνθετων σκηνών (π.χ. Picture in Picture ή ειδικά εφέ).
+    \item Ροή (streaming) σε Zoom, YouTube, Facebook.
+    \item recording της ροής στον τοπικό υπολογιστή
+    \end{itemize}
+  \item Το OBS είναι ο Ελβετικός σουγιάς των μεταδόσεων
+  \end{itemize}
+\end{frame}
+
+\begin{frame}{OBS και Zoom}
+  \begin{itemize}
+  \item Πώς να μεταδώσεις απευθείας στο Zoom:
+    \begin{enumerate}
+    \item Στήσε τη σκηνή σου στο OBS.
+    \item Ρύθμισε το OBS Virtual Camera.
+    \item Επέλεξε το OBS Virtual Camera ως πηγή βίντεο στο Zoom.
+    \end{enumerate}
+  \item \textbf{Tips:}
+    \begin{itemize}
+    \item Ελέγξτε τη σύνδεση δικτύου (upload speed > 10Mbps).
+    \item Ενεργοποιήστε την ανατροφοδότηση (audio monitoring) για έλεγχο.
+    \end{itemize}
+  \end{itemize}
+\end{frame}
+
+\section{Ανακεφαλαίωση}
+\begin{frame}{Συμπερασματικά}
+  \begin{itemize}
+  \item Η υβριδική κάλυψη είναι η γέφυρα ανάμεσα στον ψηφιακό και φυσικό κόσμο των εκδηλώσεων.
+  \item Με τον σωστό εξοπλισμό και προγραμματισμό, όλα είναι δυνατά.
+  \item Και θυμηθείτε, αν κάτι πάει στραβά... πάντα φταίει το Internet!
+  \end{itemize}
+\end{frame}
+
+\end{document}
