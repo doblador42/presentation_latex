@@ -88,6 +88,46 @@ Ligatures=TeX
   \end{figure}
 \end{frame}
 
+\begin{frame}[allowframebreaks]{Παρεμβολή σε 3.5mm Jack και XLR}
+
+\textbf{3.5mm Jack (Unbalanced Signal)}
+Το καλώδιο 3.5mm jack μεταφέρει το σήμα μέσω ενός αγωγού, ενώ η γείωση χρησιμεύει ως αναφορά.
+Το σήμα με παρεμβολή περιγράφεται ως:
+\[
+V_{\text{output}} = V_{\text{signal}} + V_{\text{noise}}
+\]
+όπου:
+\begin{itemize}
+    \item \(V_{\text{signal}}\): Το αρχικό σήμα.
+    \item \(V_{\text{noise}}\): Ο θόρυβος που προστίθεται λόγω ηλεκτρομαγνητικών παρεμβολών (\(\Phi_{\text{EMI}}\)):
+    \[
+    V_{\text{noise}} \propto \frac{\Phi_{\text{EMI}\footnote{Electromagnetic Interference}}}{d}
+    \]
+    Μεγαλύτερα μήκη καλωδίων (\(d\)) οδηγούν σε περισσότερη παρεμβολή.
+
+\end{itemize}
+Το XLR χρησιμοποιεί δύο αγωγούς (\(+V\) και \(-V\)) που μεταφέρουν αντίθετα σήματα. Το σήμα με παρεμβολή περιγράφεται ως:
+\[
+V_{\text{output}} = (V_{\text{signal}} + V_{\text{noise}}) - (-V_{\text{signal}} + V_{\text{noise}})
+\]
+Αναπτύσσοντας:
+\[
+V_{\text{output}} = 2V_{\text{signal}}
+\]
+\textbf{Σημείο-κλειδί:} Ο θόρυβος \(V_{\text{noise}}\) εξουδετερώνεται πλήρως\footnote{Βλέπε Common-Mode Rejection (CMR)})
+  , ενώ το σήμα ενισχύεται.
+Τελικά
+\begin{itemize}
+    \item \textbf{3.5mm Jack:} Το σήμα περιλαμβάνει θόρυβο:
+    \[
+    V_{\text{output}} = V_{\text{signal}} + V_{\text{noise}}
+    \]
+    \item \textbf{XLR:} Ο θόρυβος εξουδετερώνεται:
+    \[
+    V_{\text{output}} = 2V_{\text{signal}}
+    \]
+\end{itemize}
+\end{frame}
 \begin{frame}{Βίντεο:}
   \begin{itemize}
   \item HDMI Capture Card (π.χ., Elgato Camlink, Blackmagic\footnote{γνωστή για το πρόγραμμα επεξεργασίας Video Davinci Resolve} Atem mini).
