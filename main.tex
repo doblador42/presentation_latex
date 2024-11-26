@@ -1,5 +1,6 @@
 \documentclass{beamer}
 \usepackage{fontspec}
+\usepackage{hyperref}
 \protrudechars=2 % or \pdfprotrudechars=2 and
 \adjustspacing=2 %    \pdfadjustspacing=2 with luatex < v0.85
 \usepackage{amsmath}
@@ -20,15 +21,23 @@ Ligatures=TeX
 \usecolortheme{beaver}
 \title{Υβριδική Κάλυψη Εκδηλώσεων}
 \subtitle{Εισαγωγικές πληροφορίες}
-\author{Ερμής Δούλος \\ \textit{dit17046@uop.gr}}
-\date{\today}
-
+\author{Ερμής Δούλος (\textit{dit17046@uop.gr})}
 \begin{document}
 
-\frame{\titlepage}
-\section{Εισαγωγή}
+\begin{frame}
+  \titlepage
+    \begin{center}
+      % GitHub Link
+      \href{https://github.com/doblador42}{\textbf{Github Profile:}}
+
+      % QR Code
+      \includegraphics[width=0.2\textwidth]{images/qrcode.png}
+  \end{center}
+\end{frame}
+
+
 \begin{frame}{Τι Είναι Η Υβριδική Κάλυψη\footnote{Ο τομέας γνώρισε άνοδο κατά τον covid-19};}
-  \begin{itemize}[<+->]
+  \begin{itemize}
   \item \textbf{Ορισμός:} Συνδυασμός φυσικής παρουσίας και διαδικτυακής συμμετοχής.
   \item \textbf{Γιατί είναι σημαντική:}
     \begin{itemize}
@@ -42,7 +51,7 @@ Ligatures=TeX
 \section{Εξοπλισμός}
 \begin{frame}{Εξοπλισμός που Χρειαζόμαστε}
   \textbf{Ήχος:}
-  \begin{itemize}[<+->]
+  \begin{itemize}
   \item Κονσόλες ήχου (π.χ., Behringer X32).
   \item Καλώδια XLR:
     \begin{itemize}
@@ -88,7 +97,6 @@ Ligatures=TeX
 \end{frame}
 
 \begin{frame}[allowframebreaks]{Παρεμβολή σε 3.5mm Jack και XLR}
-
 \textbf{3.5mm Jack (Unbalanced Signal)}
 Το καλώδιο 3.5mm jack μεταφέρει το σήμα μέσω ενός αγωγού, ενώ η γείωση χρησιμεύει ως αναφορά.
 Το σήμα με παρεμβολή περιγράφεται ως:
@@ -127,23 +135,55 @@ V_{\text{output}} = 2V_{\text{signal}}
     \]
 \end{itemize}
 \end{frame}
-\begin{frame}{Βίντεο:}
+\begin{frame}[allowframebreaks]{Κονσόλα ήχου}
+  \begin{figure}
+    \centering
+    \includegraphics[width=0.8\textwidth]{images/mixer.png}
+    \caption{Κονσόλα ήχου και τα βασικά της στοιχεία}
+  \end{figure}
+
+  \begin{block}{Οι ανάγκες μας;}
+    \begin{itemize}
+    \item τουλάχιστον 4 εισόδους (2 XLR και 2 3.5mm).
+    \item Καλώδια XLR για τη σύνδεση μικροφώνων και των ηχείων.
+    \item Τουλάχιστον 2 εξόδους XLR για τη σύνδεση των ηχείων.
+    \item 48v phantom power για τη σύνδεση τυχών μικροφώνων (στην εγκατάσταση
+    του αμφιθεάτρου κάτι τέτοιο δεν χρειάζεται).\footnote{Σκεφτείτε το phantom power ως το Power over ethernet των μικροφώνων}
+    \end{itemize}
+  \end{block}
+\end{frame}
+\begin{frame}[allowframebreaks]{Εικόνα και Βίντεο}
+  
   \begin{itemize}
   \item HDMI Capture Card (π.χ., Elgato Camlink, Blackmagic\footnote{γνωστή για το πρόγραμμα επεξεργασίας Video Davinci Resolve} Atem mini).
   \item Κάμερες και μικρόφωνα (τουλάχιστον 1080p ανάλυση).
   \end{itemize}
+  \begin{block}{HDMI Capture Cards}
       \begin{figure}
     \centering
-    \includegraphics[width=0.1\textwidth]{images/elgato.jpeg}
+    \includegraphics[width=0.2\textwidth]{images/elgato.jpeg}
     \includegraphics[width=0.25\textwidth]{images/atem.jpg}
-    \caption{Elgato Camlink Capture card και κονσόλα καταγραφής audio/video Atem mini}
+    \caption{Elgato Camlink και κονσόλα καταγραφής audio/video Atem mini\footnote{Πιο ευέλικτη κονσόλα καταγραφής από την Elgato, αλλά και πιο ακριβή}}
+    \end{figure}
+  \end{block}
+    \begin{figure}
+    \centering
+    \includegraphics[width=0.8\textwidth]{images/atem_explanation.png}
+    \caption{Ανάλυση των θυρών της κονσόλας Atem mini}
     \end{figure}
 \end{frame}
 
-\begin{frame}{Ρυθμίσεις Εξοπλισμού}
-  \begin{itemize}
-  \item \textbf{Σύνδεση εξόδου ακουστικών της κονσόλας:}
+\begin{frame}[allowframebreaks]{Ρυθμίσεις Εξοπλισμού}
+  \begin{block}{Σχετικά με την κονσόλα ήχου}
     \begin{itemize}
+    \item Ρύθμιση των επιπέδων εισόδου και εξόδου.
+    \item Ενεργοποίηση του phantom power για τα μικρόφωνα.
+    \item Ρύθμιση των επιπέδων εξόδου για τα ηχεία.
+    \item Ενεργοποίηση του audio monitoring για τεχνικό έλεγχο
+    \end{itemize}
+  \end{block}
+  \begin{exampleblock}{Χρησιμοποιόντας την έξοδο της κονσόλας ως μικρόφωνο}
+  \begin{itemize}
     \item Χρήσιμη για παρακολούθηση ήχου.
     \item Ιδανική για τεχνικό έλεγχο.
     \item Χρήση της εξόδου της κονσόλας ως είσοδο μικροφώνου του υπολογιστή
@@ -151,18 +191,20 @@ V_{\text{output}} = 2V_{\text{signal}}
       \item Έτσι ακούγεται η \enquote{αίθουσα} διαδικτυακά
       \item Αποφεύγουμε τον μικροφωνισμό\footnote{Θέλει πάντα προσεκτική σχεδίαση του συστήματός μας για να τον αποφύγουμε}
       \end{itemize}
-    \end{itemize}
-  \item \textbf{Κατάλληλος υπολογιστής:}
-    \begin{itemize}
+  \end{itemize}
+\end{exampleblock}
+\begin{block}{One computer to rule them all}
+  Απαιτήσεις:  
+  \begin{itemize}
     \item CPU: i5 ή ανώτερο.
     \item GPU: NVIDIA GTX 1660 ή νεότερη.
-    \item RAM: 16GB+ \footnote{Σε Linux αρκούν και 8GB}.
+    \item RAM: 16GB+ \footnote{Σε Linux αρκούν και 8GB μνήμης}.
     \end{itemize}
-  \item Ο κακός υπολογιστής είναι σαν να τρέχεις μαραθώνιο με σαγιονάρες. Απλά δεν γίνεται
-  \end{itemize}
+   Ο κακός υπολογιστής είναι σαν να τρέχεις μαραθώνιο με σαγιονάρες. Απλά δεν γίνεται
+  
+  \end{block}
 \end{frame}
 
-\section{Λογισμικό}
 \begin{frame}{Λογισμικό για Υβριδική Κάλυψη}
   \textbf{OBS (Open Broadcaster Software):}
   είναι ένα δωρεάν και ανοιχτού κώδικα λογισμικό που χρησιμοποιείται για
@@ -182,7 +224,13 @@ V_{\text{output}} = 2V_{\text{signal}}
   \item Το OBS είναι ο Ελβετικός σουγιάς των μεταδόσεων
   \end{itemize}
 \end{frame}
-
+  \begin{frame}{Διάγραμμα μιας τυπικής υβριδικής αναμετάδοσης}
+    \begin{figure}
+      \centering
+      \includegraphics[width=1\textwidth]{images/diagram.png}
+      \caption{Διάγραμμα ενός συστήματος υβριδικής αναμετάδοσης}
+    \end{figure}
+  \end{frame}
 \begin{frame}{OBS και Zoom}
   \begin{itemize}
   \item Πώς να μεταδώσεις απευθείας στο Zoom:
