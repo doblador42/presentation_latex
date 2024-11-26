@@ -9,6 +9,7 @@
 \usepackage{xcolor}
 \usepackage{polyglossia}
 \usepackage{csquotes}
+\usepackage[symbol]{footmisc}
 \setmainlanguage{greek}
 \setotherlanguage{english}
 \setmainfont[Numbers={OldStyle, Proportional},
@@ -28,10 +29,9 @@ Ligatures=TeX
   \titlepage
     \begin{center}
       % GitHub Link
-      \href{https://github.com/doblador42}{\textbf{Github Profile:}}
-
+      \href{https://github.com/doblador42}{\textbf{Github Profile:}}\\
       % QR Code
-      \includegraphics[width=0.2\textwidth]{images/qrcode.png}
+      \includegraphics[width=0.15\textwidth]{images/qrcode.png}
   \end{center}
 \end{frame}
 
@@ -96,23 +96,20 @@ Ligatures=TeX
   \end{figure}
 \end{frame}
 
-\begin{frame}[allowframebreaks]{Παρεμβολή σε 3.5mm Jack και XLR}
-\textbf{3.5mm Jack (Unbalanced Signal)}
+\begin{frame}[allowframebreaks]{Παρεμβολή}
+\begin{block}{3.5mm Jack (Unbalanced Signal)}
 Το καλώδιο 3.5mm jack μεταφέρει το σήμα μέσω ενός αγωγού, ενώ η γείωση χρησιμεύει ως αναφορά.
 Το σήμα με παρεμβολή περιγράφεται ως:
 \[
 V_{\text{output}} = V_{\text{signal}} + V_{\text{noise}}
 \]
 όπου:
-\begin{itemize}
-    \item \(V_{\text{signal}}\): Το αρχικό σήμα.
-    \item \(V_{\text{noise}}\): Ο θόρυβος που προστίθεται λόγω ηλεκτρομαγνητικών παρεμβολών (\(\Phi_{\text{EMI}}\)):
     \[
-    V_{\text{noise}} \propto \frac{\Phi_{\text{EMI}\footnote{Electromagnetic Interference}}}{d}
+    V_{\text{noise}}\footnote{Το αρχικό σήμα} \propto \frac{\Phi_{\text{EMI}}\footnote{Ο θόρυβος που προστίθεται στο σύστημα λόγω ηλεκτρομαγνητικών παρεμβολών}}{d}
     \]
     Μεγαλύτερα μήκη καλωδίων (\(d\)) οδηγούν σε περισσότερη παρεμβολή.
-
-\end{itemize}
+\end{block}
+\begin{block}{XLR (Balanced Signal)}
 Το XLR χρησιμοποιεί δύο αγωγούς (\(+V\) και \(-V\)) που μεταφέρουν αντίθετα σήματα. Το σήμα με παρεμβολή περιγράφεται ως:
 \[
 V_{\text{output}} = (V_{\text{signal}} + V_{\text{noise}}) - (-V_{\text{signal}} + V_{\text{noise}})
@@ -121,9 +118,11 @@ V_{\text{output}} = (V_{\text{signal}} + V_{\text{noise}}) - (-V_{\text{signal}}
 \[
 V_{\text{output}} = 2V_{\text{signal}}
 \]
-\textbf{Σημείο-κλειδί:} Ο θόρυβος \(V_{\text{noise}}\) εξουδετερώνεται πλήρως\footnote{Βλέπε Common-Mode Rejection (CMR)})
+\end{block}
+\textbf{Σημείο-κλειδί:} Ο θόρυβος \(V_{\text{noise}}\) εξουδετερώνεται πλήρως\footnote{Βλέπε Common-Mode Rejection (CMR)}
   , ενώ το σήμα ενισχύεται.
-Τελικά
+
+  \begin{block}{Συμπερασματικά}
 \begin{itemize}
     \item \textbf{3.5mm Jack:} Το σήμα περιλαμβάνει θόρυβο:
     \[
@@ -134,6 +133,7 @@ V_{\text{output}} = 2V_{\text{signal}}
     V_{\text{output}} = 2V_{\text{signal}}
     \]
 \end{itemize}
+\end{block}
 \end{frame}
 \begin{frame}[allowframebreaks]{Κονσόλα ήχου}
   \begin{figure}
@@ -153,7 +153,7 @@ V_{\text{output}} = 2V_{\text{signal}}
   \end{block}
 \end{frame}
 \begin{frame}[allowframebreaks]{Εικόνα και Βίντεο}
-  
+
   \begin{itemize}
   \item HDMI Capture Card (π.χ., Elgato Camlink, Blackmagic\footnote{γνωστή για το πρόγραμμα επεξεργασίας Video Davinci Resolve} Atem mini).
   \item Κάμερες και μικρόφωνα (τουλάχιστον 1080p ανάλυση).
@@ -194,14 +194,14 @@ V_{\text{output}} = 2V_{\text{signal}}
   \end{itemize}
 \end{exampleblock}
 \begin{block}{One computer to rule them all}
-  Απαιτήσεις:  
+  Απαιτήσεις:
   \begin{itemize}
     \item CPU: i5 ή ανώτερο.
     \item GPU: NVIDIA GTX 1660 ή νεότερη.
     \item RAM: 16GB+ \footnote{Σε Linux αρκούν και 8GB μνήμης}.
     \end{itemize}
    Ο κακός υπολογιστής είναι σαν να τρέχεις μαραθώνιο με σαγιονάρες. Απλά δεν γίνεται
-  
+
   \end{block}
 \end{frame}
 
@@ -232,20 +232,23 @@ V_{\text{output}} = 2V_{\text{signal}}
     \end{figure}
   \end{frame}
 \begin{frame}{OBS και Zoom}
-  \begin{itemize}
-  \item Πώς να μεταδώσεις απευθείας στο Zoom:
+  \begin{block}{Πώς να μεταδώσεις απευθείας στο Zoom;}
     \begin{enumerate}
-    \item Στήσε τη σκηνή σου στο OBS.
+    \item Στήσε τη σκηνή σου στο πρόγραμμα OBS.
     \item Ρύθμισε το OBS Virtual Camera.
     \item Επέλεξε το OBS Virtual Camera ως πηγή βίντεο στο Zoom.
     \end{enumerate}
-  \item \textbf{Tips:}
+  \end{block}
+    \begin{exampleblock}{Χρήσιμες συμβουλές}
     \begin{itemize}
+    \item Ρύθμισε την εικόνα και τον ήχο πριν την εκπομπή.
+    \item Έχε πάντα ένα backup σχέδιο.
+    \item Έχε υπομονή και όρεξη.
     \item Ελέγξτε τη σύνδεση δικτύου (upload speed > 10Mbps).
     \item Ενεργοποιήστε την ανατροφοδότηση (audio monitoring) για έλεγχο.
     \end{itemize}
-  \end{itemize}
-\end{frame}
+  \end{exampleblock}
+  \end{frame}
 
 \section{Ανακεφαλαίωση}
 \begin{frame}{Συμπερασματικά}
